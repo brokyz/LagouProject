@@ -15,6 +15,9 @@ def spider(search, page, filename):
     # 搜索职业信息
     driver.find_element(By.CSS_SELECTOR, "#search_input").send_keys(search)
     driver.find_element(By.CSS_SELECTOR, "#search_input").send_keys(Keys.ENTER)
+    time.sleep(1)
+    driver.find_elements(By.CSS_SELECTOR, ".other-hot-city .city-wrapper .hot-city-name")[0].click()
+
     job_list = []
     money_list = []
     skill_list = []
@@ -68,7 +71,7 @@ def spider(search, page, filename):
     driver.quit()
 
 
-search = 'java'
-page = 20
-filename = 'web前端拉勾'
-spider(search, page, search)
+search = 'web前端'
+page = 30
+filename = 'web前端拉勾全国'
+spider(search, page, filename)
