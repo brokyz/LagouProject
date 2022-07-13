@@ -40,9 +40,3 @@ page = 20
 filename = 'java_data'
 spider(search, page, filename)
 ```
-
-
-
-## 数据展示
-
-![](https://pic.imgdb.cn/item/62c8e43ff54cd3f93731ef4d.jpg)
