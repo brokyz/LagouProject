@@ -15,6 +15,7 @@ def process(savePath, dataPath):
     fileName = os.listdir(dataPath)
     print(f"读取到需要预处理的数据为:\n{fileName}\n共{len(fileName)}个文件")
     tag_info = pd.DataFrame(fileName, columns=['class'])
+    
     tag_info["tag"] = tag_info.index
     tagPath = re.findall(re.compile(r'(.*)finalData.csv$'), savePath)[0] + 'tagInfo.csv'
     print(f"对数据进行分类:\n{tag_info}")

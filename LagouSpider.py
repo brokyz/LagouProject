@@ -106,7 +106,7 @@ def spider(driver, search, page, filename):
     data = pd.concat([pd_job, pd_money, pd_skill, pd_ink,
                      pd_area, pd_jobDes, pd_inkDes], axis=1)
     # print(data)
-    savePath = 'data/' + filename + '.csv'
+    savePath = './data/' + filename + '.csv'
     data.to_csv(savePath, encoding='utf_8_sig')
     print("爬取 "+search+" 完毕")
 
