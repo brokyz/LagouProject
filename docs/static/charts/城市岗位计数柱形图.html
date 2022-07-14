@@ -1,0 +1,216 @@
+<!--
+	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=bar-gradient&code=PTAEAcCcFMBdYJbUgWgQcwHYHsYCgAbOUAEwENYyBBADwQGdQBeUAbQHJB0ZUBq5dgGjztAUHKB3W36DAj7aBmdXHtA_nqA93VmAEI0C_CbMC25koHtAZtaBJG1mB1ZV47A_pGBI7VmBteUCOOrMDzQdsGBZxMBherMD-qYEybWYEWE53ZACBVAUoDZQEpNQFJbWUAldMBsnVlAeM9AwAPnMR1Ack1APfjZQDlbI1lAHDlAPODZQEDtQCObWUAfFUAYlUBLW0BPJ1kRQGPlWUAy5UAL1OMy2UBn90A27UAQvVlAA9NAQlTZQAODQMBXv0BmNNlACJslnUAqTUB85VlAVli1wUAJlUAUHUALuxbANE1ZQEg1QBdFL0BSM2NAGDNZQFo5ex1AXflALO1ZQGNYwKAN0VAGty4gAugBuPAgCAweBIVAYHD4IiwUgUMjMNgAVgAnABmATYgCMACYicSAAwCUkANmJNMp2IExIAHLSBLjmXgACwMvD4gDsNJ5NP5xNxLNZLI5eGJ3LJLP5krwKuleHVwrwWq1ot5Aj1esJAoExrNNIteHJVst1rtlsVeEhhGIAE8ALJkGhY7GUylQ1HoygAZQAFmQSNgAO5Y1jOgBmuFAAApAwgsf7QOmADxBsgAOiImHQsFDEKzAGoKwBKUAAbzwoDzYYj0fz4AArvRQ8mPV7q1CAL54bDgRDYTBYhtNxCwIgALnrjaboFg0BosEX7EAc-qAID1AOk6gFl5QCF0YAHU0Aj-aAI31AH9q4hXoHoHYARmuN1vAAT5gHALQD3yoA-UwygCU_oA8DqAGtGgC_Ruwy6DgITY0LQDCLtOK7kJQi4odQdD0DBK5egwAAyZBPtABCIcu94IJg9AICQ0CLrAkAdtA2H3gAxtgBC4FuADEACilIAGKCfxkH3tBZGgLh9AACoICxADWpH3k23bRou8ZkAQ9DQOJYn3pJeEUbRS5KQ-oaqaA6madponMaAABei5UlB2GuvB9CKThmEGZgRlIfeKlRmpGlaTptmSTJ8kef5ZmBRZwXWSuumefhhHEVFK5sRxkDcQAQgAwqy_GFSJiXOcu6EAFrYNgAC2i6sOJfkrrArrgEZ7AUVRNElU2w5NmC2FaZASDuWwjXiTOrXtU-ZCQHeSkBTlZDyegkDYB2mAkHRDFMRNWZrjVwYtQuxkmaAmWcaAPkxtALHhpAsD0Pmq1kOAoayfm3nQLNADikARkgmCwMm1KgKDoMMmNZ0rnWoDYPG8ZaZuYN8Od7GXewXF-oJgrCaASXQ7D8OI3Ai6UvmzJo1l3FsqyJDxpS7D47ZJlEwjSOOajF3ZaAmO0_TjP43t_XVntBMrtANVvWQVGjU15EHUdronfLSnc4u12gLd92Pc9_1vR9X2_f9JCA8D4OoxDqMNdD95syTyOg-rvNcbjgkACI8kz4uE3D7Ok2D-bClTGNcaSQqsvGgreyzZ32xzoCQ87mOsviT4I7S3vCyuYKi9DfVKT7eZoRiOnLmCeCDlCMI8ZghFEHm9nVTVoBRqG0CTl2yDnQQslyaAM2QPmeBsZRaJ2c3wYIHZ0BYrSUI1a6eU6_mE7JuwLG9_J_AWRtLHjpOybgLNZA1fQtZIaP9DsdAhbYOgyboW5rCeqW-Y1V6R8n2f-boQAkptdcoAUBN1qlPGeoAwDkjBtWXOUImyL2XrNWAv8GDH1gHdKg-8EBryai1NqW5KrN3mspSgD0ABqGlGIl0oM_V-oZ36f2Pv9H-_9AHehARPMB09Z5QMtrA2yHcSCUIINQvaT9MIvwoAwmqFEv4sKemwmi3oKygMOjwyBoBoHoULB3EsoZgGJ1gVBAclcBxAA
+	请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    // prettier-ignore
+let dataAxis = ['北京',
+'上海',
+'深圳',
+'广州',
+'成都',
+'杭州',
+'武汉',
+'南京',
+'西安',
+'佛山',
+'苏州',
+'重庆',
+'长沙',
+'郑州',
+'合肥',
+'天津',
+'青岛',
+'福州',
+'珠海',
+'大连',
+'济南',
+'东莞',
+'宁波',
+'呼和浩特',
+'海口',
+'厦门',
+'南宁',
+'石家庄',
+'无锡',
+'惠州',
+'绵阳',
+'沈阳',
+'太原',
+'贵阳',
+'哈尔滨',
+'海外',
+'嘉兴',
+'长春',
+'南昌',
+'中山',
+'保定',
+'赣州',
+'其他',
+];
+// prettier-ignore
+let data = [593,
+512,
+510,
+261,
+205,
+186,
+95,
+41,
+37,
+24,
+21,
+19,
+18,
+16,
+15,
+12,
+11,
+9,
+9,
+8,
+8,
+7,
+7,
+7,
+4,
+4,
+4,
+4,
+3,
+3,
+3,
+3,
+3,
+2,
+2,
+2,
+2,
+2,
+2,
+2,
+2,
+2,
+12,
+];
+let yMax = 500;
+let dataShadow = [];
+for (let i = 0; i < data.length; i++) {
+  dataShadow.push(yMax);
+}
+option = {
+  title: {
+    text: '城市岗位计数柱形图',
+    subtext: '鼠标可放大缩小拖拽'
+  },
+  xAxis: {
+    data: dataAxis,
+    axisLabel: {
+      inside: true,
+      color: '#E0FFFF'
+    },
+    axisTick: {
+      show: false
+    },
+    axisLine: {
+      show: false
+    },
+    z: 10
+  },
+  yAxis: {
+    axisLine: {
+      show: false
+    },
+    axisTick: {
+      show: false
+    },
+    axisLabel: {
+      color: '#BC8F8F'
+    }
+  },
+  dataZoom: [
+    {
+      type: 'inside'
+    }
+  ],
+  series: [
+    {
+      type: 'bar',
+      showBackground: true,
+      itemStyle: {
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          { offset: 0, color: '#00FF7F' },
+          { offset: 0.5, color: '#188df0' },
+          { offset: 1, color: '#188df0' }
+        ])
+      },
+      emphasis: {
+        itemStyle: {
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            { offset: 0, color: '#7FFFD4' },
+            { offset: 0.7, color: '#2378f7' },
+            { offset: 1, color: '#83bff6' }
+          ])
+        }
+      },
+      data: data
+    }
+  ]
+};
+// Enable data zoom when user click bar.
+const zoomSize = 6;
+myChart.on('click', function (params) {
+  console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
+  myChart.dispatchAction({
+    type: 'dataZoom',
+    startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
+    endValue:
+      dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
+  });
+});
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

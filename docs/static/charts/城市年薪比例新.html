@@ -1,0 +1,133 @@
+<!--
+	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=pie-roseType-simple&code=PYBwLglsB2AEC8sDeAoWsA2BTA5l6AJgFzJrqxigkDkARsGJQLbVkC-ANGZcBvQB4lU5WAGcAFsADuJMACcArli4iAZlgCGYBXKxCyIphrkBrIWMkyKirLE4HyBLRoBqELFaQXpsmx1i6GgQA8tAYAJ4kqhoYorb2Iui6opS65hI-1kp2KomiGgBuWACCogCSRnjplr7ZbA716AliWHLuoiQA2g7CidAaTHqw1AByEDjikNA4MbYAwuLGYNS5ImDhIEPUIO4rDklBEAodsJ0ArAAM_gBMlwC6q-QAxvhgrV3UlwCkK8Pf1A99gFgHEACobLbGTR7RKwCBvJgAZXW2H0sPQ9DkBFaACVDscSAAOIHNEROMAaLpA9BeAoxJREACM1yu_UGRGogFj0wCOOtRSYlafS9AB2QkcNl6aiAXflAFnafMeIkFGAZ10JABYAHQANkuAE5rsK1YThQBmM7XcUDSWAdGVADVy8upyFgdOVekZFzFEo5gBeEwB7ug70U6XQzGbrNSbhRdTYzI9HhZb2dRAAhGgF-EgPopUMs5qhOSwB98f7-YrnUKmbqzhrhWdcxzAOSagD349OwzN6a5a3Uaxlq1VnYVdnvxr3UQA4coA84KbApLrqIJtnGurQ8A2vK8ovkFtM4Ud2fbnfbmvUQDxnoWFWupyGWfvAMaxx8d65Z10rZq1JuujMJJt1Hv3gH89G-B9eMi--6AKyxgDMaROxbBnoJoXKyVocoAEyqACg6gAXdhBp5QUQLI5kOgDutoAx8roTSZ7QZ--64YAaJpEUGpbXGqg7wdQgC25n-GYkUy2YajhjGABAqgClAdRAEXCalb9oSvZiVq-6AD4qgAxKoAlraAJ5OgnsSycGJoABwasc27HMia-6AHK2gDqyipmHuhaQ6AJBqgAuiqZpZdtxiaAIuJgByynZ066lJQ6AA6K2mTmZJqeoxgBTeoAUuruQyWrqZKgAfNn5kH2ReQ6ADZZPIRW65r7oAr37gauxFmdc-lDkZgAwZulWEetqhLXPqWrVbVQWJkZ9p5TR06ARZjFGYAgdrla-XmMd1gBHNn1FyatmE1qpNZwLoxgBK6YA2Tp9Wqur7oAZcqABepfXmhqFy6hGs2JoAUHK4dtD5qoyMZavRFxnIS1X7oAj7aAMzq5Whp1iaABE2uUnvl9lVvO-6AM_ugBt2oAIXrLYSGoDmJEmOZKgDzQfFGG0RcH2SoAVJqAPnKb11fugAIqiuv1tSGWoDYmgCUmoApLZvQ9Q6AAemgCEqaNFaBWGpp1d2l37oAZtaAJI2b36hqurCjVosi2LRWMYA_pGAJHa5Wefu0u9a164mlF-6AJmZgD0duVGtDoAbymALu6o0MYmgD-qYApGZvYa2pk_bDtambkrm4AmTZvSt2q3PugCLCcjf3tTq-6ALRyRO3rpwpavObYmoyvaEuz8McoAs4mAGF6gsibuWdS4mgAHzqdjSJHcDRkMXbAANxAA
+	请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  legend: {
+    top: 'bottom'
+  },
+  toolbox: {
+    show: true,
+    feature: {
+      mark: { show: true },
+      dataView: { show: true, readOnly: false },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  series: [
+    {
+      name: 'Nightingale Chart',
+      type: 'pie',
+      radius: [50, 250],
+      center: ['50%', '50%'],
+      roseType: 'area',
+      itemStyle: {
+        borderRadius: 8
+      },
+      data: [
+        { value:120,name:'鞍山'},
+        { value:78,name:'保定'},
+        { value:284.650927487352,name:'北京'},
+        { value:108,name:'郴州'},
+        { value:194.370731707317,name:'成都'},
+        { value:54,name:'达州'},
+        { value:195.75,name:'大连'},
+        { value:269.142857142857,name:'东莞'},
+        { value:333.5,name:'佛山'},
+        { value:179.333333333333,name:'福州'},
+        { value:120,name:'赣州'},
+        { value:202.735632183908,name:'广州'},
+        { value:132,name:'贵阳'},
+        { value:300,name:'哈尔滨'},
+        { value:204,name:'海口'},
+        { value:390,name:'海外'},
+        { value:247,name:'杭州'},
+        { value:154.4,name:'合肥'},
+        { value:103.714285714286,name:'呼和浩特'},
+        { value:200,name:'惠州'},
+        { value:123,name:'济南'},
+        { value:102,name:'嘉兴'},
+        { value:144,name:'金华'},
+        { value:96,name:'兰州'},
+        { value:138,name:'廊坊'},
+        { value:60,name:'泸州'},
+        { value:120,name:'马鞍山'},
+        { value:152,name:'绵阳'},
+        { value:123,name:'南昌'},
+        { value:208.682926829268,name:'南京'},
+        { value:132,name:'南宁'},
+        { value:216,name:'宁波'},
+        { value:204.545454545455,name:'青岛'},
+        { value:249,name:'厦门'},
+        { value:252.09375,name:'上海'},
+        { value:252.411764705882,name:'深圳'},
+        { value:192,name:'沈阳'},
+        { value:175.5,name:'石家庄'},
+        { value:248.285714285714,name:'苏州'},
+        { value:202,name:'太原'},
+        { value:168,name:'唐山'},
+        { value:166,name:'天津'},
+        { value:182,name:'无锡'},
+        { value:205.389473684211,name:'武汉'},
+        { value:192.972972972973,name:'西安'},
+        { value:96,name:'西宁'},
+        { value:360,name:'香港'},
+        { value:60,name:'银川'},
+        { value:207,name:'长春'},
+        { value:174.666666666667,name:'长沙'},
+        { value:149.625,name:'郑州'},
+        { value:165,name:'中山'},
+        { value:176.526315789474,name:'重庆'},
+        { value:193.333333333333,name:'珠海'}
+      ]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
