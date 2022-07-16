@@ -2,7 +2,7 @@
 
 - 对[拉勾招聘](https://www.lagou.com/)进行 IT 类工作信息进行爬取.
 - 对爬取信息进行数据预处理.
-- 对数据进行分析和可视化.
+- 对数据进行分析和可视化, [demo页面](https://brokyz.github.io/LagouProject/).
 - 根据用户所掌握的技能对用户进行工作推荐.
 
 ## 概述
