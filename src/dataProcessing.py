@@ -8,10 +8,10 @@ def main():
     savePath = '../data/processed/finalData.csv'
     dataPath = '../data/spider/'
     print(f"预处理开始，预处理数据路径为:{dataPath}")
-    process(savePath, dataPath)
+    process(dataPath, savePath)
 
 
-def process(savePath, dataPath):
+def process(dataPath, savePath):
     fileName = os.listdir(dataPath)
     print(f"读取到需要预处理的数据为:\n{fileName}\n共{len(fileName)}个文件")
     tag_info = pd.DataFrame(fileName, columns=['class'])
