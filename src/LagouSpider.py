@@ -16,7 +16,7 @@ def login(url):
     return driver
 
 
-def spider(driver, search, page, filename):
+def spider(driver, search, page, savePath):
 
     # 搜索职业信息
     driver.get('https://lagou.com')
@@ -50,7 +50,7 @@ def spider(driver, search, page, filename):
     index = 0
     for k in range(page):
         index += 1
-        time.sleep(2)
+        time.sleep(1)
         print("获取信息")
         # 获取工作名
         job = driver.find_elements(
@@ -106,7 +106,7 @@ def spider(driver, search, page, filename):
     data = pd.concat([pd_job, pd_money, pd_skill, pd_ink,
                      pd_area, pd_jobDes, pd_inkDes], axis=1)
     # print(data)
-    savePath = './data/' + filename + '.csv'
+    savePath = savePath + search + '.csv'
     data.to_csv(savePath, encoding='utf_8_sig')
     print("爬取 "+search+" 完毕")
 
@@ -116,12 +116,13 @@ def spider(driver, search, page, filename):
 # filename = '硬件开发'
 # spider(search, page, filename)
 
-searchClass = ['后端开发', '移动开发', '前端开发', '人工智能', '测试', '运维', 'DBA', '硬件开发']
-driver = login('https://passport.lagou.com/login/login.html')
-for i in searchClass:
-    spider(driver, i, 0, i)
-    time.sleep(60)
-print('全部数据爬取完毕')
-driver.quit()
-# driver = login('https://passport.lagou.com/login/login.html')
-# spider(driver, '移动开发', 0, '移动开发')
+if __name__ == '__main__':
+    searchClass = ['后端开发', '移动开发', '前端开发', '人工智能', '测试', '运维', 'DBA', '硬件开发']
+    page = 0
+    savePath = '../data/spider/'
+    driver = login('https://passport.lagou.com/login/login.html')
+    for i in searchClass:
+        spider(driver, i, page, savePath)
+        time.sleep(60)
+    print('全部数据爬取完毕')
+    driver.quit()

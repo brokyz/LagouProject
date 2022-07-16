@@ -5,8 +5,8 @@ import os
 
 
 def main():
-    savePath = './finalData/finalData.csv'
-    dataPath = './data/'
+    savePath = '../data/processed/finalData.csv'
+    dataPath = '../data/spider/'
     print(f"预处理开始，预处理数据路径为:{dataPath}")
     process(savePath, dataPath)
 
@@ -25,7 +25,7 @@ def process(savePath, dataPath):
     creatVar = locals()
     dataList = []
     for i in fileName:
-        path = "data/" + i
+        path = dataPath + i
         creatVar["data" + str(i)] = pd.read_csv(path)
         creatVar["data" + str(i)]["tag"] = n
         dataList.append(creatVar["data" + str(i)])
