@@ -5,14 +5,14 @@
 - 对数据进行分析和可视化.
 - 根据用户所掌握的技能对用户进行工作推荐.
 
-# 概述
-## 爬虫部分
+## 概述
+### 爬虫部分
 
 爬取模块的代码为[LagouSpider.py](https://github.com/brokyz/LagouProject/blob/main/src/LagouSpider.py)
 
 使用`selenium`库进行数据爬取, 爬取下来的数据以`.csv`格式存于`data/spider`目录
 
-| 爬取内容 | 描述           |
+| 内容 | 描述           |
 | -------- | -------------- |
 | job      | 工作名称       |
 | money    | 薪资情况       |
@@ -22,19 +22,40 @@
 | jobDes     | 工作描述       |
 | inkDes     | 公司描述       |
 
-## 预处理部分
+### 预处理部分
 
 预处理模块的代码为[dataProcessing.py](https://github.com/brokyz/LagouProject/blob/main/src/dataProcessing.py)
 
 读取目录`data\spider`中的所有'.csv'数据, 对数据进行预处理, 将预处理结果保存于指定路径'data/processed'
 
+| 内容 | 描述           |
+| -------- | -------------- |
+| job      | 工作名称       |
+| Low_wages    | 最低薪资(k)       |
+| Hight_wages    | 最高薪资(k) |
+| Year_wages      | 年薪(k)         |
+| city     | 工作地点       |
+| ink     | 公司名      |
+| staff     | 公司员工数量       |
+| JobDes     | 工作描述       |
+| inkDes     | 公司描述       |
+
+
+### 工作推荐部分
+
+工作推荐使用了多项式朴素贝叶斯模型使用技能需求对工作类别进行预测, 模型训练源码[fitModel.py](https://github.com/brokyz/LagouProject/blob/main/src/fitModel.py), 训练模型保存于`model`目录下.
+
+在[recommendClass.py](https://github.com/brokyz/LagouProject/blob/main/src/recommendClass.py)中, 对`model`目录中的模型进行调用, 对输入技能进行工作类别预测.
+
+在[recommendJob.py](https://github.com/brokyz/LagouProject/blob/main/src/recommendJob.py)中调用了[recommendClass.py](https://github.com/brokyz/LagouProject/blob/main/src/recommendClass.py), 对用户所掌握的技能进行工作推荐.
+
 
 ## 使用
 
-在使用前需要安装`selenium`和`pandas`，这两个包。
+在使用前需要安装`selenium`, `pandas`, `numpy`.
 
 ```
-pip install selenium pandas
+pip install selenium pandas numpy
 ```
 
 需要安装相应的浏览器和匹配的浏览器驱动，本程序使用了`chrome浏览器`，相应内核可以前往[ChromeDriver](https://chromedriver.chromium.org/downloads)下载对应的版本。
